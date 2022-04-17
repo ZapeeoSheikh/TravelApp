@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LargeText extends StatelessWidget {
-  String title;
-  Color color;
-  double size;
+  final String title;
+  final Color color;
+  final double size;
   LargeText(
       {Key? key,
       this.size = 24,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {
-  String title;
-  Color color;
-  double size;
+  final String title;
+  final Color color;
+  final double? size;
   AppText(
       {Key? key,
-      required this.size,
+      this.size = 16,
       required this.title,
-      this.color = Colors.black87})
+      this.color = Colors.black54})
       : super(key: key);
 
   @override
