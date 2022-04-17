@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/pages/bar_page.dart';
 import 'package:travelapp/pages/home_page.dart';
+import 'package:travelapp/pages/me_page.dart';
+import 'package:travelapp/pages/search.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -9,16 +12,31 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int currentindex = 0;
+  void onTap(int index) {
+    setState(() {
+      currentindex = index;
+    });
+  }
+
   List pages = [
     HomePage(),
+    BarPage(),
+    SearchPage(),
+    MePage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: pages[currentindex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.black54.withOpacity(0.3),
         elevation: 0,
+        currentIndex: currentindex,
+        onTap: onTap,
+        type: BottomNavigationBarType.fixed,
+        unselectedFontSize: 0,
         items: [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home_filled)),
           BottomNavigationBarItem(
