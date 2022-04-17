@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travelapp/WelcomePage.dart';
+import 'package:travelapp/pages/main_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: WelcomePage(),
+        body: MainPage(),
       ),
     );
   }
