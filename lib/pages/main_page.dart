@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
         elevation: 0,
         currentIndex: currentindex,
         onTap: onTap,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         unselectedFontSize: 0,
         items: [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home_filled)),
