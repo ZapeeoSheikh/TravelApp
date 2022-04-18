@@ -31,14 +31,14 @@ class _MainPageState extends State<MainPage> {
       body: pages[currentindex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black54,
-        unselectedItemColor: Colors.black54.withOpacity(0.3),
+        unselectedItemColor: Colors.black54.withOpacity(0.2),
         elevation: 0,
         currentIndex: currentindex,
         onTap: onTap,
         type: BottomNavigationBarType.fixed,
         unselectedFontSize: 0,
         items: [
-          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home_filled)),
+          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.apps)),
           BottomNavigationBarItem(
               label: "Bars", icon: Icon(Icons.bar_chart_sharp)),
           BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
