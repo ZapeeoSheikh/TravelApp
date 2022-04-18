@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/Ui_Kit/colos.dart';
+import 'package:travelapp/apptext/text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +13,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 7, vsync: this);
+    var images = {
+      "balloning.png": "Balloning",
+      "hiking.png": "Hiking",
+      "kayaking.png": "Kayaking",
+      "snorkling.png": "Snorkling",
+    };
     return Container(
       margin: EdgeInsets.only(top: 80, left: 20, right: 15),
       child: Column(
@@ -114,13 +122,42 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ],
           ),
           Container(
-            height: 30,
-            width: 33,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("img/"),
-            )),
-          )
+            height: 80,
+            margin: EdgeInsets.only(top: 20),
+            width: double.maxFinite,
+            child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 20, left: 20),
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage(
+                                "img/" + images.keys.elementAt(index)),
+                            fit: BoxFit.cover),
+                        //color: Colors.red,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      child: AppText(
+                        title: images.values.elementAt(index),
+                        color: AppColor.mainColor.withOpacity(0.5),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
