@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       "snorkling.png": "Snorkling",
     };
     return Container(
-      margin: EdgeInsets.only(top: 80, left: 20, right: 15),
+      margin: EdgeInsets.only(top: 100, left: 20, right: 15),
       child: Column(
         children: [
           Row(
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             children: [
               Text(
                 "Discover",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               Expanded(child: Container()),
             ],
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ]),
           ),
           SizedBox(
-            height: 20,
+            height: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           Container(
             height: 80,
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 30),
             width: double.maxFinite,
             child: ListView.builder(
               itemCount: 4,
