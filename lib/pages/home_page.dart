@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             children: [
               Text(
                 "Discover",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Expanded(child: Container()),
             ],
@@ -93,6 +94,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               Text("data2"),
               Text("dat3"),
             ]),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Explore more",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "See all",
+                style: TextStyle(
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            height: 30,
+            width: 33,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("img/"),
+            )),
           )
         ],
       ),
