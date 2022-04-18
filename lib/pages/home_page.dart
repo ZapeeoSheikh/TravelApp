@@ -71,13 +71,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 height: 300,
                 width: double.maxFinite,
                 decoration: BoxDecoration(
-                color: Colors.red,
-borderRadius: BorderRadius.circular(20),
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage("img/"),
+                    image: AssetImage("img/mountain.jpeg"),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                child: ListView.builder(itemBuilder: ),
               ),
               Text("data2"),
               Text("data2"),
