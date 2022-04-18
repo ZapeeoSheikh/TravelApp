@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 3, vsync: this);
+    TabController _tabController = TabController(length: 7, vsync: this);
     return Container(
       margin: EdgeInsets.only(top: 80, left: 20, right: 15),
       child: Column(
@@ -44,13 +44,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ],
           ),
           Container(
+            alignment: Alignment.centerLeft,
             child: TabBar(
+                labelPadding: EdgeInsets.only(left: 20, right: 20),
                 controller: _tabController,
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey,
+                isScrollable: true,
+                indicatorSize: TabBarIndicatorSize.label,
                 tabs: [
                   Tab(text: "Places"),
                   Tab(text: "Inspirations"),
+                  Tab(text: "Discover"),
+                  Tab(text: "Inspirations"),
+                  Tab(text: "Discover"),
+                  Tab(text: "Discover"),
                   Tab(text: "Discover"),
                 ]),
           ),
@@ -59,6 +67,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
               Text("data1"),
+              Text("data2"),
+              Text("data2"),
+              Text("data2"),
+              Text("data2"),
               Text("data2"),
               Text("dat3"),
             ]),
