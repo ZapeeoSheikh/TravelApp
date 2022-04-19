@@ -13,6 +13,8 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+  int selectedstar = 5;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,28 +79,111 @@ class _DetailsPageState extends State<DetailsPage> {
                     height: 10,
                   ),
                   Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(
-                      left: 20,
-                    ),
-                    child: AppText(
-                      title: "Rating about it",
-                      color: AppColor.mainColor,
+                    margin: EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: AppColor.mainColor,
+                          size: 20,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        AppText(
+                          title: "USA, California",
+                          size: 14,
+                        )
+                      ],
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 20),
+                        child: Wrap(
+                            children: List.generate(5, (index) {
+                          return Icon(
+                            Icons.star,
+                            color: index < selectedstar
+                                ? AppColor.starColor
+                                : AppColor.textColor1,
+                          );
+                        })),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      AppText(title: "(4.0)"),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(left: 20),
+                      child: LargeText(title: "People")),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(left: 20),
+                    child: AppText(title: "Number of people in your group"),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Wrap(
+                    children: List.generate(5, (index) {
+                      return InkWell(
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 20),
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            color: selectedIndex == index
+                                ? AppColor.mainColor
+                                : AppColor.textColor1,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Text(
+                              ((index + 1) * 2).toString(),
+                              style: TextStyle(
+                                color: selectedIndex == index
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: LargeText(title: "Description")),
+                  SizedBox(
+                    height: 10,
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 20),
-                    child: ListView.builder(
-                        itemCount: 5,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Icon(
-                            Icons.star,
-                            color: AppColor.starColor,
-                          );
-                        }),
+                    alignment: Alignment.centerLeft,
+                    child: AppText(
+                        title:
+                            "Travel is the best partner to release the stress in your life. Traveler are more happiner and energetic as compare to other. You must need to travel to give some rest of your everyday work."),
                   ),
                 ],
               ),
