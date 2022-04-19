@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       "snorkling.png": "Snorkling",
     };
     return Container(
-      margin: EdgeInsets.only(top: 100, left: 20, right: 15),
+      margin: EdgeInsets.only(top: 80, left: 20, right: 15),
       child: Column(
         children: [
           Row(
@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             height: 300,
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
+              //======= ListView builder for Tab 01 ============
               ListView.builder(
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
@@ -95,7 +96,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   );
                 },
               ),
-              Text("data2"),
+
+              //======= ListView builder for Tab 02 ============
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.only(right: 15),
+                    height: 300,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: AssetImage("img/mountain.jpeg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                },
+              ),
               Text("data2"),
               Text("data2"),
               Text("data2"),
@@ -150,6 +171,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Container(
                       child: AppText(
                         title: images.values.elementAt(index),
+                        size: 14,
                         color: AppColor.mainColor.withOpacity(0.5),
                       ),
                     ),
