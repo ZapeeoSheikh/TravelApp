@@ -185,6 +185,31 @@ class _DetailsPageState extends State<DetailsPage> {
                         title:
                             "Travel is the best partner to release the stress in your life. Traveler are more happiner and energetic as compare to other. You must need to travel to give some rest of your everyday work."),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(left: 20),
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: AppColor.textColor1),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.favorite_border,
+                            color: AppColor.textColor1,
+                          ),
+                        ),
+                      ),
+                      A
+                    ],
+                  ),
                 ],
               ),
             )
