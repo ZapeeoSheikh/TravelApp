@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
-import 'package:travelapp/apptext/ResponsiveButton.dart';
 import 'package:travelapp/apptext/largetext.dart';
 
 import 'apptext/text.dart';
@@ -209,10 +208,6 @@ class _DetailsPageState extends State<DetailsPage> {
                               color: AppColor.textColor1,
                             ),
                           ),
-                        ),
-                        Expanded(child: Container()),
-                        ResponsiveButton(
-                          width: ((MediaQuery.of(context).size.width) - 100),
                         ),
                       ],
                     ),
