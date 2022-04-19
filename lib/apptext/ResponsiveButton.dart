@@ -24,8 +24,13 @@ class ResponsiveButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
+          mainAxisAlignment: isResponsive == true
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
           children: [
-            AppText(title: "Book Trip Now"),
+            isResponsive == true
+                ? AppText(title: "Book Trip Now")
+                : Container(),
             Image(
               image: AssetImage(
                 "img/button-one.png",
