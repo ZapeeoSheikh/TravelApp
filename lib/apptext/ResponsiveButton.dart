@@ -16,7 +16,9 @@ class ResponsiveButton extends StatelessWidget {
     return Flexible(
       child: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.only(left: 6),
+        padding: isResponsive == true
+            ? EdgeInsets.only(left: 20, right: 10)
+            : EdgeInsets.only(left: 0, right: 0),
         width: width,
         height: 60,
         decoration: BoxDecoration(
@@ -29,12 +31,17 @@ class ResponsiveButton extends StatelessWidget {
               : MainAxisAlignment.center,
           children: [
             isResponsive == true
-                ? AppText(title: "Book Trip Now")
+                ? Container(
+                    child: AppText(
+                    title: "Book Trip Now",
+                    color: Colors.white,
+                  ))
                 : Container(),
             Image(
               image: AssetImage(
                 "img/button-one.png",
               ),
+              fit: isResponsive == true ? BoxFit.none : BoxFit.cover,
             ),
           ],
         ),
