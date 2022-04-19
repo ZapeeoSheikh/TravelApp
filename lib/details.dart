@@ -210,7 +210,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             ),
                           ),
                         ),
-                        Expanded(child: Container()),
+                        //Expanded(child: Container()),
                         ResponsiveButton(
                             width: (MediaQuery.of(context).size.width) / 2)
                       ],
