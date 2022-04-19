@@ -189,6 +189,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   SizedBox(
                     height: 10,
                   ),
+                  // ======= Last Row Buttons ==========
                   Container(
                     margin: EdgeInsets.only(right: 10),
                     child: Row(
