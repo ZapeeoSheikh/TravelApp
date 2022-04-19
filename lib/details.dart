@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -26,6 +27,20 @@ class _DetailsPageState extends State<DetailsPage> {
                     color: Colors.black54,
                   )
                 ],
+              ),
+            ),
+            Positioned(
+              left: 0,
+              top: 0,
+              child: Container(
+                height: 350,
+                width: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  // image: DecorationImage(
+                  //   image: AssetImage("img/mountain.jpeg"),
+                  // ),
+                ),
               ),
             ),
           ],
