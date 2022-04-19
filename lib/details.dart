@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
+import 'package:travelapp/apptext/ResponsiveButton.dart';
 import 'package:travelapp/apptext/largetext.dart';
 
 import 'apptext/text.dart';
@@ -188,27 +189,32 @@ class _DetailsPageState extends State<DetailsPage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 20),
-                        height: 60,
-                        width: 60,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: AppColor.textColor1),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: AppColor.textColor1,
+                  Container(
+                    margin: EdgeInsets.only(right: 10),
+                    child: Row(
+                      children: [
+                        Container(
+                          alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 20),
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: AppColor.textColor1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.favorite_border,
+                              color: AppColor.textColor1,
+                            ),
                           ),
                         ),
-                      ),
-                      A
-                    ],
+                        Expanded(child: Container()),
+                        ResponsiveButton(
+                            width: (MediaQuery.of(context).size.width) / 2)
+                      ],
+                    ),
                   ),
                 ],
               ),
