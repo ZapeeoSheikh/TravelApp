@@ -5,9 +5,14 @@ class BarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text("Bar Page "),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Container(
+          child: Image(
+            image: AssetImage("img/bar.png"),
+          ),
+        ),
       ),
     );
   }
