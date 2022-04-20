@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
 import 'package:travelapp/apptext/text.dart';
 
+import '../routes/routes.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -26,9 +28,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.menu,
-                size: 28,
+              IconButton(
+                icon: Icon(
+                  Icons.menu,
+                  size: 28,
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.welcome);
+                },
               ),
               Container(
                 height: 40,
@@ -36,7 +43,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(
-                            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Fzapeeosheikh&psig=AOvVaw0DA5TkuPLGGgHbnmGPMlKr&ust=1650546903716000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPj41sLcovcCFQAAAAAdAAAAABAD")),
+                            "https://res.cloudinary.com/practicaldev/image/fetch/s--WI8qnpv3--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/834351/68ddcc8f-45e5-4874-85a2-3c3a34de7106.jpeg"),
+                        fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.grey),
               ),
@@ -84,16 +92,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.only(right: 15),
-                    height: 300,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage("img/mountain.jpeg"),
-                        fit: BoxFit.cover,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   );
