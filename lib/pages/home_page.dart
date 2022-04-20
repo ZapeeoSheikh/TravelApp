@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/Myimg.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
 import 'package:travelapp/apptext/text.dart';
 
@@ -21,8 +22,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       "kayaking.png": "Kayaking",
       "snorkling.png": "Snorkling",
     };
+    int myindex;
     return Container(
-      margin: EdgeInsets.only(top: 80, left: 20, right: 15),
+      margin: EdgeInsets.only(top: 50, left: 15, right: 15, bottom: 12),
       child: Column(
         children: [
           Row(
@@ -36,9 +38,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 onPressed: () {
                   Navigator.pushNamed(context, MyRoutes.welcome);
                 },
-              ),
+              ), //==== Top icon and avatar
               Container(
-                height: 40,
+                height: 45,
                 width: 45,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -75,11 +77,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 tabs: [
                   Tab(text: "Places"),
                   Tab(text: "Inspirations"),
+                  Tab(text: "Freshing"),
+                  Tab(text: "Fealing"),
                   Tab(text: "Discover"),
-                  Tab(text: "Inspirations"),
-                  Tab(text: "Discover"),
-                  Tab(text: "Discover"),
-                  Tab(text: "Discover"),
+                  Tab(text: "Category"),
+                  Tab(text: "Favrioute"),
                 ]),
           ),
           Container(
@@ -104,7 +106,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
-                          image: AssetImage("img/mountain.jpeg"),
+                          image: AssetImage("img/" + MyImg.bgimg[index]),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -118,31 +120,151 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.only(right: 15),
-                    height: 300,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage("img/mountain.jpeg"),
-                        fit: BoxFit.cover,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image:
+                              AssetImage("img/" + MyImg.bgimg[index + 1 * 2]),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   );
                 },
               ),
-              Text("data2"),
-              Text("data2"),
-              Text("data2"),
-              Text("data2"),
-              Text("dat3"),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image:
+                              AssetImage("img/" + MyImg.bgimg[index + 2 * 2]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("img/" + MyImg.bgimg[index + 1]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("img/" + MyImg.bgimg[index + 3]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.details);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 300,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("img/" + MyImg.bgimg[6]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ]),
           ),
-          SizedBox(
-            height: 30,
-          ),
+          Expanded(child: Container()),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -152,11 +274,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               Text(
                 "See all",
-                style: TextStyle(
-                  fontSize: 15,
-                ),
+                style: TextStyle(fontSize: 15, color: AppColor.textColor1),
               ),
             ],
+          ), //===== Explore more
+          SizedBox(
+            height: 5,
           ),
           Container(
             height: 80,
@@ -168,17 +291,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 20, left: 20),
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            image: AssetImage(
-                                "img/" + images.keys.elementAt(index)),
-                            fit: BoxFit.cover),
-                        //color: Colors.red,
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        margin: EdgeInsets.only(right: 20, left: 20),
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "img/" + images.keys.elementAt(index)),
+                              fit: BoxFit.cover),
+                          //color: Colors.red,
+                        ),
                       ),
                     ),
                     SizedBox(

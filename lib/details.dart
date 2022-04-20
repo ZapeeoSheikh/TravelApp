@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:travelapp/Myimg.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
 import 'package:travelapp/apptext/ResponsiveButton.dart';
 import 'package:travelapp/apptext/largetext.dart';
+import 'package:travelapp/routes/routes.dart';
 
 import 'apptext/text.dart';
 
@@ -14,8 +16,9 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  int selectedstar = 5;
+  int selected = 4;
   int selectedIndex = -1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,26 +33,44 @@ class _DetailsPageState extends State<DetailsPage> {
               decoration: BoxDecoration(
                 color: Colors.red,
                 image: DecorationImage(
-                  image: AssetImage("img/mountain.jpeg"),
+                  image: AssetImage("img/" + MyImg.bgimg[6]),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Positioned(
-              left: 20,
+              left: 10,
               top: 70,
+              right: 5,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  )
+                  IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      size: 28,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.mainpage);
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.more_vert_sharp,
+                      size: 28,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.welcome);
+                    },
+                  ),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 330),
-              height: 470,
+              margin: EdgeInsets.only(top: 300),
+              height: 500,
               width: double.maxFinite,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -75,7 +96,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                       ],
                     ),
-                  ),
+                  ), //=====Yogasimaro
                   SizedBox(
                     height: 10,
                   ),
@@ -97,9 +118,9 @@ class _DetailsPageState extends State<DetailsPage> {
                         )
                       ],
                     ),
-                  ),
+                  ), // ===== Location
                   SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   Row(
                     children: [
@@ -109,20 +130,24 @@ class _DetailsPageState extends State<DetailsPage> {
                             children: List.generate(5, (index) {
                           return Icon(
                             Icons.star,
-                            color: index < selectedstar
+                            color: index < selected
                                 ? AppColor.starColor
                                 : AppColor.textColor1,
+                            size: 15,
                           );
                         })),
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      AppText(title: "(4.0)"),
+                      AppText(
+                        title: "(4.0)",
+                        size: 15,
+                      ),
                     ],
-                  ),
+                  ), // ===== Stars
                   SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   Container(
                       alignment: Alignment.centerLeft,
@@ -136,38 +161,42 @@ class _DetailsPageState extends State<DetailsPage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Wrap(
-                    children: List.generate(5, (index) {
-                      return InkWell(
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        },
-                        child: Container(
-                          alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(left: 20),
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            color: selectedIndex == index
-                                ? AppColor.mainColor
-                                : AppColor.textColor1,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Text(
-                              ((index + 1) * 2).toString(),
-                              style: TextStyle(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Wrap(
+                        children: List.generate(5, (index) {
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                selectedIndex = index;
+                              });
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(left: 10),
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
                                 color: selectedIndex == index
-                                    ? Colors.white
-                                    : Colors.black,
+                                    ? AppColor.mainColor
+                                    : AppColor.textColor1,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  ((index + 1) * 2).toString(),
+                                  style: TextStyle(
+                                    color: selectedIndex == index
+                                        ? Colors.white
+                                        : Colors.black,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      );
-                    }),
+                          );
+                        }),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10,
