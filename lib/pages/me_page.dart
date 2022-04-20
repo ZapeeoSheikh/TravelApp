@@ -49,8 +49,7 @@ class MePage extends StatelessWidget {
                     width: 200,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(""),
-                      ),
+                          image: AssetImage("img/me.jpeg"), fit: BoxFit.cover),
                       color: Colors.red,
                     ),
                   ),
