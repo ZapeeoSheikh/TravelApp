@@ -18,7 +18,7 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   int selected = 4;
   int selectedIndex = -1;
-
+  int myindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -219,35 +219,47 @@ class _DetailsPageState extends State<DetailsPage> {
                     height: 10,
                   ),
                   // ======= Last Row Buttons ==========
-                  Container(
-                    margin: EdgeInsets.only(right: 10),
-                    child: Row(
-                      children: [
-                        Container(
-                          alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(left: 20),
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: AppColor.textColor1),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.favorite_border,
-                              color: AppColor.textColor1,
+
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        {
+                          myindex;
+                        }
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 10),
+                      child: Row(
+                        children: [
+                          Container(
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(left: 20),
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(color: AppColor.textColor1),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                myindex == 1
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                color: AppColor.textColor1,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        ResponsiveButton(
-                          width: double.maxFinite,
-                          isResponsive: true,
-                        ),
-                      ],
+                          SizedBox(
+                            width: 20,
+                          ),
+                          ResponsiveButton(
+                            width: double.maxFinite,
+                            isResponsive: true,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

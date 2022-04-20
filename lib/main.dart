@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:travelapp/details.dart';
 import 'package:travelapp/pages/main_page.dart';
 import 'package:travelapp/pages/me_page.dart';
-import 'package:travelapp/pages/search.dart';
 import 'package:travelapp/routes/routes.dart';
 
 import 'WelcomePage.dart';
@@ -31,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       },
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SearchPage(),
+        body: DetailsPage(),
       ),
     );
   }
