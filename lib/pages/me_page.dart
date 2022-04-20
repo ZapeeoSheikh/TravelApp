@@ -12,8 +12,9 @@ class MePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: Container(
-          margin: EdgeInsets.only(top: 160, left: 10),
+          margin: EdgeInsets.only(top: 155, left: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -40,7 +41,7 @@ class MePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
               Row(
                 children: [
@@ -208,7 +209,7 @@ class MePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -218,9 +219,9 @@ class MePage extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ],
-              ),
+              ), //========= Information
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
                 children: [
