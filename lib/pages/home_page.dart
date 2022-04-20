@@ -39,16 +39,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Navigator.pushNamed(context, MyRoutes.welcome);
                 },
               ), //==== Top icon and avatar
-              Container(
-                height: 45,
-                width: 45,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "https://res.cloudinary.com/practicaldev/image/fetch/s--WI8qnpv3--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/834351/68ddcc8f-45e5-4874-85a2-3c3a34de7106.jpeg"),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.mepage);
+                },
+                child: Container(
+                  height: 45,
+                  width: 45,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://res.cloudinary.com/practicaldev/image/fetch/s--WI8qnpv3--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/834351/68ddcc8f-45e5-4874-85a2-3c3a34de7106.jpeg"),
+                          fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey),
+                ),
               ),
             ],
           ),

@@ -26,10 +26,11 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.welcome: (context) => WelcomePage(),
         MyRoutes.mainpage: (context) => MainPage(),
         MyRoutes.details: (context) => DetailsPage(),
+        MyRoutes.mepage: (context) => MePage(),
       },
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: MePage(),
+        body: WelcomePage(),
       ),
     );
   }
