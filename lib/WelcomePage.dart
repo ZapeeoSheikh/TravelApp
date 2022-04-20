@@ -64,7 +64,8 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       SizedBox(height: 20),
                       //This Container is used for the Responsive Button that we gonna published on to the welcome screen
-                      ResponsiveButton(width: 120)
+                      GestureDetector(
+                          onTap: () {}, child: ResponsiveButton(width: 120))
                     ],
                   ),
                   Column(
