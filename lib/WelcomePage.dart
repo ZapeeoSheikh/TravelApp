@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/Ui_Kit/colos.dart';
 import 'package:travelapp/apptext/ResponsiveButton.dart';
 import 'package:travelapp/apptext/text.dart';
+import 'package:travelapp/pages/main_page.dart';
 
 import 'apptext/largetext.dart';
 
@@ -65,7 +67,11 @@ class _WelcomePageState extends State<WelcomePage> {
                       SizedBox(height: 20),
                       //This Container is used for the Responsive Button that we gonna published on to the welcome screen
                       GestureDetector(
-                          onTap: () {}, child: ResponsiveButton(width: 120))
+                          onTap: () {
+                            Get.to(() => const MainPage(),
+                                transition: Transition.fade);
+                          },
+                          child: ResponsiveButton(width: 120))
                     ],
                   ),
                   Column(
