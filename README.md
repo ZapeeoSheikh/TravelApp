@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project 
+These are the initial glimpse of the project 
 
 https://user-images.githubusercontent.com/77886136/157508068-a4bf3d09-7faf-47fb-81cb-ccb9642c2012.mp4
 
